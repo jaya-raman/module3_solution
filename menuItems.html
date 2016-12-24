@@ -1,0 +1,19 @@
+<!-- <ol ng-repeat="item in foundItemsMenu.menuitems">
+  <ul>({{ item.short_name }}) {{ item.name }} -
+  {{ item.description }}
+      <button ng-click="foundItemsMenu.onRemove({index:$index});">Dont want this one</button>
+  </ul>
+</ol><br/> -->
+<table ng-show="foundItemsMenu.menuitems.length">
+  <tr>
+    <td>Name</td>
+    <td>Short Name</td>
+    <td>Description</td>
+  </tr>
+  <tr ng-repeat="item in foundItemsMenu.menuitems">
+    <td>{{ item.name }}</td>
+    <td>{{ item.short_name }}</td>
+    <td>{{ item.description }}</td>
+  </tr>
+</table>
+<div ng-show="foundItemsMenu.menuitems.length == 0">Nothing found!</div>

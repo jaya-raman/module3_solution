@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Directives</title>
+    <style>
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Restaurant App</h2>
+    <div ng-controller="NarrowItDownController as narrowCtrl">
+      <div>
+        <input type="text" placeholder="Search" ng-model="narrowCtrl.searchText"/>
+        <button ng-click="narrowCtrl.getMatchedMenu();">Narrow It Down </button>
+      </div>
+      <div>
+        <found-items call=narrowCtrl menuitems="narrowCtrl.menuItems" on-remove="narrowCtrl.removeItem(index)"></found-items>
+      </div>
+    </div>
+  </body>
+</html>

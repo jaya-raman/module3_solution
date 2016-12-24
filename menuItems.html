@@ -4,16 +4,23 @@
       <button ng-click="foundItemsMenu.onRemove({index:$index});">Dont want this one</button>
   </ul>
 </ol><br/> -->
-<table ng-show="foundItemsMenu.menuitems.length">
-  <tr>
-    <td>Name</td>
-    <td>Short Name</td>
-    <td>Description</td>
-  </tr>
-  <tr ng-repeat="item in foundItemsMenu.menuitems">
-    <td>{{ item.name }}</td>
-    <td>{{ item.short_name }}</td>
-    <td>{{ item.description }}</td>
-  </tr>
-</table>
+<div>
+  <table ng-show="foundItemsMenu.menuitems.length">
+    <tr>
+      <td>Name</td>
+      <td>Short Name</td>
+      <td>Description</td>
+      <td>RemoveOption</td>
+    </tr>
+    <tr ng-repeat="item in foundItemsMenu.menuitems">
+      <td>{{ item.name }}</td>
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.description }}</td>
+      <td><button ng-click="foundItemsMenu.onRemove({index:$index});">
+      Dont want this one</button></td>
+    </tr>
+  </table>
+</div>
+<!-- <button ng-click="foundItemsMenu.onRemove({index:$index});">Dont want this one</button> -->
+</div>
 <div ng-show="foundItemsMenu.menuitems.length == 0">Nothing found!</div>
